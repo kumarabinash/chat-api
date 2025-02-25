@@ -6,3 +6,8 @@ export enum USER_EVENTS {
 
 
 }
+
+export enum CHAT_EVENTS {
+    CHAT_MESSAGE = 'CHAT.MESSAGE',
+    CHAT_MESSAGE_RECEIVED = 'CHAT.MESSAGE.RECEIVED',
+}

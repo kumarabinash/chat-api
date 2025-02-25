@@ -5,13 +5,17 @@ import { setupSocketHandlers } from "./handlers";
 
 const app = express();
 const httpServer = createServer(app);
-const io = new Server(httpServer);
-
+const io = new Server(httpServer, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
 
 
 setupSocketHandlers(io);
 
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+httpServer.listen(3001, () => {
+  console.log("Server is running on port 3001");
 });
